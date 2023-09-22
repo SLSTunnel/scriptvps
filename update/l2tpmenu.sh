@@ -14,7 +14,7 @@ echo -e "$yy 3$y. Extending Account L2TP Active Life"
 echo -e "$yy 4$y. Menu"
 echo -e "$yy 5$y. Exit"
 echo -e   "$y==========================================================$wh"
-echo -e   "\E[44;1;39m            ⇱ Sc By Tarap Kuhing ⇲             \E[0m"
+echo -e   "\E[44;1;39m            ⇱ Sc By RichBoyBrown ⇲             \E[0m"
 echo -e   "$y==========================================================$wh"
 read -p "Select From Options [ 1 - 7 ] : " menu
 echo -e ""
