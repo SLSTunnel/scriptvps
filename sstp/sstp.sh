@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/perizinan/main/ipvps.txt | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -26,7 +26,7 @@ echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
 exit 0
 fi
 # Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp"
 
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -69,7 +69,7 @@ make
 cpack -G DEB
 dpkg -i accel-ppp.deb
 mv /etc/accel-ppp.conf.dist /etc/accel-ppp.conf
-wget -O /etc/accel-ppp.conf "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp/accel.conf"
+wget -O /etc/accel-ppp.conf "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/accel.conf"
 sed -i $MYIP2 /etc/accel-ppp.conf
 chmod +x /etc/accel-ppp.conf
 systemctl start accel-ppp
@@ -91,8 +91,8 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 #input perintah sstp
-wget -O /usr/bin/addsstp https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp/addsstp.sh && chmod +x /usr/bin/addsstp
-wget -O /usr/bin/delsstp https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp/delsstp.sh && chmod +x /usr/bin/delsstp
-wget -O /usr/bin/ceksstp https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp/ceksstp.sh && chmod +x /usr/bin/ceksstp
-wget -O /usr/bin/renewsstp https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp/renewsstp.sh && chmod +x /usr/bin/renewsstp
+wget -O /usr/bin/addsstp https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/addsstp.sh && chmod +x /usr/bin/addsstp
+wget -O /usr/bin/delsstp https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/delsstp.sh && chmod +x /usr/bin/delsstp
+wget -O /usr/bin/ceksstp https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/ceksstp.sh && chmod +x /usr/bin/ceksstp
+wget -O /usr/bin/renewsstp https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/renewsstp.sh && chmod +x /usr/bin/renewsstp
 rm -f /root/sstp.sh
