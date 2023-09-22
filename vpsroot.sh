@@ -1,6 +1,6 @@
 #!/bin/bash
 # Mod By Tarp Kuhing
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sshd_config;
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sshd_config;
 systemctl restart sshd;
 clear;
 echo -e "Masukkan Password VPS Baru:";
