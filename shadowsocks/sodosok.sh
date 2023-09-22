@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/perizinan/main/ipvps.txt | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -27,7 +27,7 @@ echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
 exit 0
 fi
 # Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks"
 
 source /etc/os-release
 OS=$ID
@@ -117,10 +117,10 @@ iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
-wget -O addss "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks/addss.sh"
-wget -O delss "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks/delss.sh"
-wget -O cekss "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks/cekss.sh"
-wget -O renewss "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks/renewss.sh"
+wget -O addss "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/addss.sh"
+wget -O delss "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/delss.sh"
+wget -O cekss "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/cekss.sh"
+wget -O renewss "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/renewss.sh"
 chmod +x addss
 chmod +x delss
 chmod +x cekss
