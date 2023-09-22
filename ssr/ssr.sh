@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/perizinan/main/ipvps.txt | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -26,7 +26,7 @@ echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
 exit 0
 fi
 # Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr"
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
@@ -151,7 +151,7 @@ if [[ ${OS} == "centos" ]]; then
 }
 Start_SSR(){
 	check_pid
-	wget -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr/ssrmu"
+	wget -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/ssrmu"
 	/etc/init.d/ssrmu start
 }
 Install_SSR(){
@@ -167,9 +167,9 @@ Save_iptables
 Start_SSR
 }
 Install_SSR
-wget -O /usr/bin/ssr https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr/ssrmu.sh && chmod +x /usr/bin/ssr
-wget -O /usr/bin/addssr https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr/addssr.sh && chmod +x /usr/bin/addssr
-wget -O /usr/bin/delssr https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr/delssr.sh && chmod +x /usr/bin/delssr
-wget -O /usr/bin/renewssr https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr/renewssr.sh && chmod +x /usr/bin/renewssr
+wget -O /usr/bin/ssr https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/ssrmu.sh && chmod +x /usr/bin/ssr
+wget -O /usr/bin/addssr https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/addssr.sh && chmod +x /usr/bin/addssr
+wget -O /usr/bin/delssr https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/delssr.sh && chmod +x /usr/bin/delssr
+wget -O /usr/bin/renewssr https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/renewssr.sh && chmod +x /usr/bin/renewssr
 touch /usr/local/shadowsocksr/akun.conf
 rm -f /root/ssr.sh
