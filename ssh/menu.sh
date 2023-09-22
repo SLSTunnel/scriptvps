@@ -8,7 +8,7 @@ wh="\033[0m"
 
 echo -e "\033[0;36m===================================================\033[m"
 echo -e   "\E[44;1;39m              ⇱ PREMIUM AUTO SCRIPT ⇲             \E[0m"
-echo -e   "\E[44;1;39m                ⇱ BY TARAP KUHING ⇲               \E[0m"
+echo -e   "\E[44;1;39m                ⇱ BY RichBoyBrown ⇲               \E[0m"
 echo -e "\033[0;36m===================================================\033[m"
 echo -e ""
 echo -e "$y SSH & OPENVPN $wh"
