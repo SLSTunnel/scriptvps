@@ -3,7 +3,7 @@
 wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sshd_config;
 systemctl restart sshd;
 clear;
-#echo -e "Masukkan Password VPS Baru:";
+echo -e "Masukkan Password VPS Baru:";
 read -e pwe;
 usermod -p `perl -e "print crypt("$pwe","Q4")"` root;
 #echo -e "Masukan Nama User Akun Baru";
