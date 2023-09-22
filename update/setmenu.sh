@@ -24,7 +24,7 @@ echo -e   "\033[1;33m 12. Info Script Auto Install\033[1;33m"
 echo -e   "\033[31;1m 13. Menu\033[31;1m"
 echo -e   "\033[1;33m 14 Exit\033[1;33m"
 echo -e   "$y===========================================================$wh"
-echo -e   "\E[44;1;39m            ⇱ Sc By Tarap Kuhing ⇲              \E[0m"
+echo -e   "\E[44;1;39m            ⇱ Sc By RichBoyBrown ⇲              \E[0m"
 echo -e   "$y===========================================================$wh"
 echo -e   ""
 read -p   "Select From Options [ 1 - 60 ] : " menu
