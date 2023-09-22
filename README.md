@@ -2,12 +2,12 @@
 <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S++C++R++I++P+T++~++M++O++D++~++B++Y" />
 <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=T++A++R++A++P+~+K++U++H++I++N++G" />
 </p>
-<p align='center'><a href="https://api.daily.dev/get?r=Tarap-Kuhing"><img src="https://user-images.githubusercontent.com/120649258/210357165-62adb36d-600b-449e-bccd-d491ac5bb24b.gif?r=82s" width="150" alt="Hayuk"/></a></p>
+<p align='center'><a href="https://api.daily.dev/get?r=SLSTunnel"><img src="https://user-images.githubusercontent.com/120649258/210357165-62adb36d-600b-449e-bccd-d491ac5bb24b.gif?r=82s" width="150" alt="Hayuk"/></a></p>
 
 <h2 align="center">
 Auto Script Install VPN Service
-Mod By TARAP KUHING
-Wa : 085754292950
+Mod By RichBoyBrown
+Wa : 18765946096
 
 <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"></h2>
 
@@ -20,7 +20,7 @@ Wa : 085754292950
 <p align="center"><img src="https://img.shields.io/badge/Service-SSH_Websocket-success.svg">  <img src="https://img.shields.io/badge/Service-OpenVPN_Websocket-success.svg">  <img src="https://img.shields.io/badge/Service-SSLH-success.svg">  <img src="https://img.shields.io/badge/Service-Stunnel5-success.svg">  <img src= "https://img.shields.io/badge/Service-OHP_Open_Http_Puncher-success.svg">  <img src= "https://img.shields.io/badge/Service-SSTP_VPN-success.svg">  <img src= "https://img.shields.io/badge/Service-L2TP_VPN-success.svg">  <img src= "https://img.shields.io/badge/Service-PPTP_VPN-success.svg">
 <p align="center"><img src="https://img.shields.io/badge/Service-SSH_OpenSSH-success.svg">  <img src="https://img.shields.io/badge/Service-SSH_Dropbear-success.svg">  <img src="https://img.shields.io/badge/Service-BadVPN-success.svg">  <img src="https://img.shields.io/badge/Service-OpenVPN-success.svg">  <img src="https://img.shields.io/badge/Service-Squid3-success.svg">  <img   src="https://img.shields.io/badge/Service-Webmin-success.svg">  <img src="https://img.shields.io/badge/Service-SlowDns-success.svg">  <p align="center"><img src="https://img.shields.io/badge/Service-XRAY-success.svg">  <img src="https://img.shields.io/badge/Service-XRAY_Websocket_TLS-success.svg">  <img src="https://img.shields.io/badge/Service-XRAY_VLESS_VMESS-success.svg">  <img src="https://img.shields.io/badge/Service-XRAY_gRPC_VLESS_VMESS-success.svg">  <img src="https://img.shields.io/badge/Service-XRAY_TROJAN-success.svg">  <p align="center"><img src="https://img.shields.io/badge/Service-SSR-success.svg">  <img src="https://img.shields.io/badge/Service-Trojan_Go-success.svg">  <img src="https://img.shields.io/badge/Service-WireGuard-success.svg">  <img src= "https://img.shields.io/badge/Service-Shadowsocks-success.svg">  
 
-### Info By Tarap Kuhing:
+### Info By RichBoyBrown:
 Buat VPS Fresh atau VPS Baru dan Wajib Menggunakan User: root
 * Login VPS User menggunakan user root
 * Cara langsung masuk ke akses root
@@ -36,12 +36,9 @@ atau
 su
 ```
 
-### Link FB Saya
-```html
-https://m.facebook.com/100050453861530/posts/628374871570224/?app=fbl
-```
 
-## Installation Script By Tarap Kuhing
+
+## Installation Script By RichBoyBrown
 ## 1.
 Part 1: Update dan Upgrade
    <img src="https://img.shields.io/badge/Update%20Upgrade-green">
@@ -63,7 +60,7 @@ Part 2: Buat Akses Root Di VPS /Root VPS
   <img src="https://img.shields.io/badge/Akses_Root%20VPS-green">
 Untuk Mengizinkan Root Dan Ubah Password Login di VPS Google Cloud Platform, Aws, Dan Lain-lain
    ```html
-  wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/vpsroot.sh && bash vpsroot.sh
+  wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/vpsroot.sh && bash vpsroot.sh
   ```
 
 # 2.5
@@ -76,10 +73,10 @@ cd
   ```
 ### 3.
 Part 3: Install Layanan VPN Service
-Mod By TARAP KUHING
+Mod By RichBoyBrown
   <img src="https://img.shields.io/badge/Install_Semua_Layanan_VPN%20Batch-green">
   ```html
-rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/setup.sh && chmod +x setup.sh && ./setup.sh 
+rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/setup.sh && chmod +x setup.sh && ./setup.sh 
 
 ```
 
@@ -87,7 +84,7 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 * • jika tidak bisa login di vps ,gunakan port ssh
 * • 22, 2253
 
-### Fitur Script Mod By TARAP KUHING
+### Fitur Script Mod By RichBoyBrown
 
 • SSH & OpenVPN
 
@@ -206,6 +203,6 @@ rm -f setup.sh && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ip
 
 
 =======================
-**Mod By Tarap Kuhing**
-**WA ME :085754292950**
+**Mod By RichBoyBrown**
+**WA ME :18765946096**
 =======================
