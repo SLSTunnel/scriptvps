@@ -16,7 +16,7 @@ echo -e   "\033[1;33m 5. Renew Certificate XRAYS Account\033[1;33m"
 echo -e   "\033[0;34m 6. Menu\033[0;34m"
 echo -e   "\033[1;33m 7. Exit\033[1;33m"
 echo -e   "$y==========================================================$wh"
-echo -e   "\E[44;1;39m            ⇱ Sc By Tarap Kuhing ⇲             \E[0m"
+echo -e   "\E[44;1;39m            ⇱ Sc By RichBoyBrown ⇲             \E[0m"
 echo -e   "$y==========================================================$wh"
 read -p   "Select From Options [ 1 - 7 ] : " menu
 echo -e   ""
