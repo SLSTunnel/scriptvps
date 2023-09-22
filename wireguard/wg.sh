@@ -18,7 +18,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/Tarap-Kuhing/perizinan/main/ipvps.txt | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -31,7 +31,7 @@ exit 0
 fi
 # ==================================================
 # Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/wireguard"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard"
 
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -116,9 +116,9 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O addwg "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/wireguard/addwg.sh"
-wget -O delwg "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/wireguard/delwg.sh"
-wget -O renewwg "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/wireguard/renewwg.sh"
+wget -O addwg "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard/addwg.sh"
+wget -O delwg "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard/delwg.sh"
+wget -O renewwg "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard/renewwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
