@@ -15,7 +15,7 @@ echo -e   "$yy 4$y. Check User Login XRAYS Vless"
 echo -e   "$yy 5$y. Menu"
 echo -e   "$yy 6$y. Exit"
 echo -e   "$y==========================================================$wh"
-echo -e   "\E[44;1;39m            ⇱ Sc By Tarap Kuhing ⇲             \E[0m"
+echo -e   "\E[44;1;39m            ⇱ Sc By RichBoyBrown ⇲             \E[0m"
 echo -e   "$y==========================================================$wh"
 read -p   "Select From Options [ 1 - 6 ] : " menu
 echo -e   ""
