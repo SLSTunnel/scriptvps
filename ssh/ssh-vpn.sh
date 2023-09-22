@@ -14,16 +14,16 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 # ==================================================
 # Link Hosting Kalian
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh"
 
 # Link Hosting Kalian Untuk Xray
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray"
 
 # Link Hosting Kalian Untuk Trojan Go
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/trojango"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/trojango"
 
 # Link Hosting Kalian Untuk Stunnel5
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/stunnel5"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/stunnel5"
 
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
@@ -43,7 +43,7 @@ commonname=akbarstorevpn
 email=akbarssh21@gmail.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -142,8 +142,8 @@ echo "neofetch" >> .profile
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/Tarap-Kuhing/SCVPS/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://raw.githubusercontent.com/SLSTunnel/SCVPS/main/ssh/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/SLSTunnel/SCVPS/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -151,13 +151,13 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/index.html1"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/index.html1"
 /etc/init.d/nginx restart
 cd
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -188,7 +188,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
@@ -244,7 +244,7 @@ rm -rf /root/vnstat-2.6
 
 # install stunnel 5
 cd /root/
-wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/stunnel5/stunnel5.zip"
+wget -q -O stunnel5.zip "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/stunnel5/stunnel5.zip"
 unzip -o stunnel5.zip
 cd /root/stunnel
 chmod +x configure
@@ -307,7 +307,7 @@ WantedBy=multi-user.target
 END
 
 # Service Stunnel5 /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/stunnel5/stunnel5.init"
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/stunnel5/stunnel5.init"
 
 # Ubah Izin Akses
 chmod 600 /etc/stunnel5/stunnel5.pem
@@ -332,7 +332,7 @@ systemctl restart stunnel5
 /etc/init.d/stunnel5 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -369,10 +369,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-#wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/issue.net"
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -393,70 +393,70 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O addhost "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/addhost.sh"
-wget -O about "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/about.sh"
-wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/menu.sh"
-wget -O addssh "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/addssh.sh"
-wget -O trialssh "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/trialssh.sh"
-wget -O delssh "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/delssh.sh"
-wget -O member "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/member.sh"
-wget -O delexp "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/delexp.sh"
-wget -O cekssh "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/cekssh.sh"
-wget -O restart "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/restart.sh"
-wget -O issue "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/issue.net"
-wget -O speedtest "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/info.sh"
-wget -O ram "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/ram.sh"
-wget -O renewssh "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/renewssh.sh"
-wget -O autokill "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/tendang.sh"
-wget -O clearlog "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/clearlog.sh"
-wget -O changeport "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/changeport.sh"
-wget -O portovpn "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/portovpn.sh"
-wget -O portwg "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/portwg.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/porttrojan.sh"
-wget -O portsstp "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/portsstp.sh"
-wget -O portsquid "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/portsquid.sh"
-wget -O portvlm "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/portvlm.sh"
-wget -O wbmn "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/xp.sh"
-wget -O swapkvm "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/swapkvm.sh"
-wget -O addvmess "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/addv2ray.sh"
-wget -O addvless "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/addvless.sh"
-wget -O addtrojan "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/addtrojan.sh"
-wget -O delvmess "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/delv2ray.sh"
-wget -O delvless "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/delvless.sh"
-wget -O deltrojan "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/deltrojan.sh"
-wget -O cekvmess "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/cekv2ray.sh"
-wget -O cekvless "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/cekvless.sh"
-wget -O cektrojan "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/cektrojan.sh"
-wget -O renewvmess "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/renewv2ray.sh"
-wget -O renewvless "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/renewvless.sh"
-wget -O renewtrojan "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/renewtrojan.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/certv2ray.sh"
-wget -O addtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/trojango/addtrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/trojango/deltrgo.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/trojango/renewtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/trojango/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/websocket/portsshws.sh"
+wget -O addhost "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/addhost.sh"
+wget -O about "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/about.sh"
+wget -O menu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/menu.sh"
+wget -O addssh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/addssh.sh"
+wget -O trialssh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/trialssh.sh"
+wget -O delssh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/delssh.sh"
+wget -O member "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/member.sh"
+wget -O delexp "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/delexp.sh"
+wget -O cekssh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/cekssh.sh"
+wget -O restart "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/restart.sh"
+wget -O issue "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/issue.net"
+wget -O speedtest "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/info.sh"
+wget -O ram "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/ram.sh"
+wget -O renewssh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/renewssh.sh"
+wget -O autokill "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/tendang.sh"
+wget -O clearlog "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/clearlog.sh"
+wget -O changeport "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/changeport.sh"
+wget -O portovpn "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/portovpn.sh"
+wget -O portwg "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/portwg.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/porttrojan.sh"
+wget -O portsstp "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/portsstp.sh"
+wget -O portsquid "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/portsquid.sh"
+wget -O portvlm "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/portvlm.sh"
+wget -O wbmn "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/xp.sh"
+wget -O swapkvm "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/swapkvm.sh"
+wget -O addvmess "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/addv2ray.sh"
+wget -O addvless "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/addvless.sh"
+wget -O addtrojan "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/addtrojan.sh"
+wget -O delvmess "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/delv2ray.sh"
+wget -O delvless "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/delvless.sh"
+wget -O deltrojan "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/deltrojan.sh"
+wget -O cekvmess "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/cekv2ray.sh"
+wget -O cekvless "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/cekvless.sh"
+wget -O cektrojan "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/cektrojan.sh"
+wget -O renewvmess "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/renewv2ray.sh"
+wget -O renewvless "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/renewvless.sh"
+wget -O renewtrojan "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/renewtrojan.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/certv2ray.sh"
+wget -O addtrgo "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/trojango/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/trojango/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/trojango/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/trojango/cektrgo.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket/portsshws.sh"
 
-wget -O sshovpnmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/l2tpmenu.sh"
-wget -O menu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/menu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/vlessmenu.sh"
-wget -O trmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/setmenu.sh"
-wget -O running "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/running.sh"
-wget -O update "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/update/update.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/l2tpmenu.sh"
+wget -O menu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/menu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/vlessmenu.sh"
+wget -O trmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/setmenu.sh"
+wget -O running "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/running.sh"
+wget -O update "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/update.sh"
 
 chmod +x portsshnontls
 chmod +x portsshws
