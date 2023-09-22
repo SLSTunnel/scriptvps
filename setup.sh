@@ -21,7 +21,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl "https://raw.githubusercontent.com/Tarap-Kuhing/perizinan/main/ipvps.txt" | grep $MYIP )
+IZIN=$( curl "https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt" | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -35,25 +35,25 @@ fi
 # ==========================================
 # Getting
 # Link Hosting Kalian Untuk Ssh Vpn
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh"
 # Link Hosting Kalian Untuk Sstp
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp"
 # Link Hosting Kalian Untuk Ssr
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/wireguard"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard"
 # Link Hosting Kalian Untuk Xray
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray"
 # Link Hosting Kalian Untuk Ipsec
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ipsec"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipsec"
 # Link Hosting Kalian Untuk Backup
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/backup"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/backup"
 # Link Hosting Kalian Untuk Websocket
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/websocket"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket"
 # Link Hosting Kalian Untuk Ohp
-tarapkuhing="raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ohp"
+tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ohp"
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -68,24 +68,24 @@ exit 0
 fi
 mkdir /var/lib/tarapkuhing;
 echo "IP=" >> /var/lib/tarapkuhing/ipvps.conf
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
 #install v2ray
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/sstp/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssr/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/shadowsocks/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/wireguard/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install L2TP
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ipsec/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipsec/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 # Websocket
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/websocket/edu.sh && chmod +x edu.sh && ./edu.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket/edu.sh && chmod +x edu.sh && ./edu.sh
 # Ohp Server
-wget https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
@@ -112,7 +112,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/Tarap-Kuhing/scriptvps/main/ssh/set.sh"
+wget -O /etc/set.sh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
