@@ -2,13 +2,13 @@
 
 clear
 echo -e "================================================="
-echo -e "#     Premium Auto Script By TARAP KUHING       #"
+echo -e "#     Premium Auto Script By RichBoyBrown     #"
 echo -e "#               WA : 085754292950               #"
 echo -e "================================================="
 echo -e "# For Debian 10 64 bit                          #"
 echo -e "# For Ubuntu 18.04 & Ubuntu 20.04 64 bit        #"
 echo -e "# For VPS with KVM and VMWare virtualization    #"
-echo -e "# Build Up By TARAP KUHING                      #"
+echo -e "# Build Up By RichBoyBrown                    #"
 echo -e "================================================="
 echo -e "# Thanks To                                     #"
 echo -e "================================================="
