@@ -23,7 +23,6 @@ echo -e "\033[0;36m 7.Delete User Expired SSH & OpenVPN\033[0;36m"
 echo -e "\033[1;33m 8.Set up Autokill SSH\033[1;33m"
 echo -e "\033[0;36m 9.Displays Users Who Do Multi Login SSH\033[0;36m"
 echo -e "\033[1;33m 10.Restart All Service\033[1;33m"
-echo -e "\033[0;36m 61.Set Or Change NameServers\003[1;33m"
 echo -e ""
 echo -e "$y L2TP $wh"
 echo -e "\033[0;36m===================================================\033[m"
@@ -107,6 +106,10 @@ echo -e "\033[31;1m 57.Reboot VPS\033[31;1m"
 echo -e "\033[1;33m 58.Speedtest VPS\033[1;33m"
 echo -e "\033[31;1m 59.Displaying System Information\033[31;1m"
 echo -e "\033[1;33m 60.Info Script Auto Install\033[1;33m"
+echo -e "\033[31;1m 61.Set Or Change NameServers\003[1;33m"
+echo -e "\033[1;31m 62.Clear TMP Logs\003[1;33m"
+echo -e "\033[31;1m 63.Update Karnel\003[1;33m"
+echo -e "\033[1;31m 64.Set Or Change Domain\003[1;33m"
 echo -e "\033[0;36m===================================================\033[m"
 echo -e ""
 read -p "Select From Options [ 1 - 60 ] : " menu
@@ -294,6 +297,15 @@ about
 ;;
 61)
 nameserver
+;;
+62)
+clear-log
+;;
+63)
+karnel-updt
+;;
+64)
+domain-menu
 ;;
 *)
 clear
