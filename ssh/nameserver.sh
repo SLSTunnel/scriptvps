@@ -1,4 +1,3 @@
-@@ -13,15 +13,15 @@ 
 done=$(cat $installed | grep -w "done" | wc -l)
 if [[ ${done} == '1' ]]; then
     echo -ne "Nama Server: "
