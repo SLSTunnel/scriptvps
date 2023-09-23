@@ -112,7 +112,7 @@ echo -e "\033[31;1m 63.Update Karnel\003[1;33m"
 echo -e "\033[1;31m 64.Set Or Change Domain\003[1;33m"
 echo -e "\033[0;36m===================================================\033[m"
 echo -e ""
-read -p "Select From Options [ 1 - 60 ] : " menu
+read -p "Select From Options [ 1 - 64 ] : " menu
 echo -e ""
 case $menu in
 1)
