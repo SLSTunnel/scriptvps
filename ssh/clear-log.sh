@@ -1,4 +1,3 @@
-@@ -0,0 +1,24 @@
 #!/bin/bash
 data=(`find /var/log/ -name *.log`);
 for log in "${data[@]}"
