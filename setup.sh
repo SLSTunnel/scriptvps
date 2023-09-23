@@ -165,7 +165,7 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""
-echo "   - Installation Script vps Mod By TARAP KUHING......SELESAI......!!!!!!"
+echo "   - Installation Script vps Mod By RichBoyBrown......SELESAI......!!!!!!"
 echo ""
 echo " Reboot 15 Sec"
 sleep 15
