@@ -23,7 +23,7 @@ echo -e   "\033[0;33m 11. •TROJAN GO MENU\033[0;33m"
 echo -e   "\033[1;33m 12. •CEK SEMUA SERVICE VPN\033[1;33m"
 echo -e   "\033[0;33m 13. •SETTING\033[0;33m"
 echo -e   "\033[1;33m 14. •UPDATE [ SCRIPT ]\033[1;33m"
-echo -e   "\033[0;33m 15. •CLEAR TMP LOGS [SCRIPT]\003 
+echo -e   "\033[0;33m 15. •CLEAR TMP LOGS [SCRIPT]\003[0;33m"
 echo -e   "\033[1;33m 16. •CHANGE OR ADD OWN NAMESERVERS\033[1;33m"
 echo -e   "\033[0;33m 17. •CHANGE OR ADD OWN DOMAIN NAME\033[0;33m"
 echo -e   "\033[1;33m 18. •UPDATE KERNEL VERSION\033[1;33m"
@@ -32,7 +32,7 @@ echo -e "\033[0;36m==================================================\033[m"
 echo -e   "\E[44;1;39m           ⇱ MOD BY RichBoyBrown ⇲                \E[0m"
 echo -e   "\E[44;1;39m            ⇱ WA : 18765946096 ⇲                 \E[0m"
 echo -e "\033[0;36m==================================================\033[m"
-read -p   "Select From Options [ 1 - 16 ] : " menu
+read -p   "Select From Options [ 1 - 19 ] : " menu
 case $menu in
 1)
 clear
@@ -104,7 +104,7 @@ domain-menu
 ;;
 18)
 clear
-karnel-updt
+kernel-updt
 ;;
 19)
 clear
