@@ -299,7 +299,7 @@ about
 nameserver
 ;;
 62)
-clear-log
+clearlog
 ;;
 63)
 karnel-updt
