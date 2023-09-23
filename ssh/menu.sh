@@ -23,6 +23,7 @@ echo -e "\033[0;36m 7.Delete User Expired SSH & OpenVPN\033[0;36m"
 echo -e "\033[1;33m 8.Set up Autokill SSH\033[1;33m"
 echo -e "\033[0;36m 9.Displays Users Who Do Multi Login SSH\033[0;36m"
 echo -e "\033[1;33m 10.Restart All Service\033[1;33m"
+echo -e "\033[0;36m 11.Set Or Change NameServers\003[1;33m"
 echo -e ""
 echo -e "$y L2TP $wh"
 echo -e "\033[0;36m===================================================\033[m"
@@ -290,6 +291,9 @@ info
 ;;
 60)
 about
+;;
+61)
+nameserver
 ;;
 *)
 clear
