@@ -100,7 +100,7 @@ nameserver
 ;;
 17)
 clear
-domain-menu
+domenu
 ;;
 18)
 clear
