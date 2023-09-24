@@ -87,16 +87,16 @@ ChallengeResponseAuthentication no
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
-#AllowAgentForwarding yes
+AllowAgentForwarding yes
 AllowTcpForwarding yes
-#GatewayPorts no
+GatewayPorts yes
 X11Forwarding yes
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
 PrintMotd no
 #PrintLastLog yes
-#TCPKeepAlive yes
+TCPKeepAlive yes
 #UseLogin no
 #PermitUserEnvironment no
 #Compression delayed
