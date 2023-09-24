@@ -1,46 +1,25 @@
 #!/bin/bash
-DF='\e[39m'
-Bold='\e[1m'
-Blink='\e[5m'
-yell='\e[33m'
-red='\e[31m'
-green='\e[32m'
-blue='\e[34m'
-PURPLE='\e[35m'
-CYAN='\e[36m'
-Lred='\e[91m'
-Lgreen='\e[92m'
-Lyellow='\e[93m'
-NC='\e[0m'
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook : "
-echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
-exit 0
-fi
-#EDIT IZIN
-clear 
-echo -e  "$PURPLE  .-------------------------------------------------------."
-echo -e  "$PURPLE  |                      $Blink $yell  Domain Menu$NC                   $PURPLE|"
-echo -e  "$PURPLE  '-------------------------------------------------------'$NC"
-echo -e "   $green 1)$NC $yell Add Subdomain Host For VPS$NC"
-echo -e "   $green 2)$NC $yell Add ID Cloudflare$NC"
-echo -e "   $green 3)$NC $yell Cloudflare Add-Ons$NC"
-echo -e "   $green 4)$NC $yell Pointing BUG$NC"
-echo -e "   $green 5)$NC $yell Renew Certificate V2RAY$NC"
-echo -e "   $green 6)$NC $yell BACK TO MENU$NC"
-echo -e  "$PURPLE  .-------------------------------------------------------."
-echo -e  "$PURPLE  |                $yell Script status : Premium$NC               $PURPLE|"
-echo -e  "$PURPLE  '-------------------------------------------------------'$NC"
-echo -e ""
-read -p "     Please Input Number  [1-6 or x] :  "  opt
+#!/bin/bash
+clear
+m="\033[0;1;36m"
+y="\033[0;1;37m"
+yy="\033[0;1;32m"
+yl="\033[0;1;33m"
+wh="\033[0m"
+echo -e   "$y===========================================================$wh"
+echo -e   "\E[44;1;39m            ⇱ SYSTEM SETTING ⇲                 \E[0m"
+echo -e   "$y===========================================================$wh"
+echo -e   "\033[31;1m 1.  Add Subdomain Host For VPS\033[31;1m"
+echo -e   "\033[1;33m 2.  Add ID Cloudflare\033[1;33m"
+echo -e   "\033[31;1m 3.  Cloudflare Add-Ons\033[31;1m"
+echo -e   "\033[1;33m 4.  Pointing BUG\033[1;33m"
+echo -e   "\033[1;33m 5.  Renew Certificate V2RAY\033[1;33m"
+echo -e   "\033[31;1m 6. BACK TO MENU\033[31;1m"
+echo -e   "$y===========================================================$wh"
+echo -e   "\E[44;1;39m            ⇱ Sc By RichBoyBrown ⇲              \E[0m"
+echo -e   "$y===========================================================$wh"
+echo -e   ""
+read -p   "Select From Options [ 1 - 6 ] : " menu
 echo -e ""
 case $opt in
 1) 
