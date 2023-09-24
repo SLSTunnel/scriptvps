@@ -32,12 +32,30 @@ echo -e ""
 read -p "     Please Input Number  [1-6 or x] :  "  opt
 echo -e ""
 case $opt in
-1) clear ; add-host ;;
-2) clear ; cff ;;
-3) clear ; cfd ;;
-4) clear ; cfh ;;
-5) clear ; certv2ray ;;
-6) clear ; menu ;;
+1) 
+clear 
+add-host 
+;;
+2) 
+clear 
+cff
+;;
+3) 
+clear 
+cfd 
+;;
+4)
+clear 
+cfh
+;;
+5)
+clear 
+certv2ray
+;;
+6) 
+clear 
+menu 
+;;
 x) exit ;;
 *) echo "Please enter an correct number" ;;
 esac
