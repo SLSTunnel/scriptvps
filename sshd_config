@@ -16,15 +16,12 @@ Port 2269
 Port 169
 Port 99
 Port 443
-LocalPort 1080
-TLSversion auto
-AutoStart yes
 AddressFamily any
 ListenAddress 0.0.0.0
 ListenAddress ::22
 
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Ciphers and keying
