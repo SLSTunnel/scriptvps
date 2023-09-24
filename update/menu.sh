@@ -29,7 +29,7 @@ echo -e   "\033[0;33m 17. •CHANGE OR ADD OWN CLOUDFLARE DOMAIN\033[0;33m"
 echo -e   "\033[1;33m 18. •UPDATE KERNEL VERSION\033[1;33m"
 echo -e   "\033[0;33m 19. •Exit\033[0;33m"
 echo -e "\033[0;36m==================================================\033[m"
-echo -e   "\E[44;1;39m           ⇱ MOD BY RichBoyBrown ⇲                \E[0m"
+echo -e   "\E[44;1;39m           ⇱ MOD BY RichBoyBrown ⇲               \E[0m"
 echo -e   "\E[44;1;39m            ⇱ WA : 18765946096 ⇲                 \E[0m"
 echo -e "\033[0;36m==================================================\033[m"
 read -p   "Select From Options [ 1 - 19 ] : " menu
