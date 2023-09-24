@@ -12,8 +12,19 @@ Lred='\e[91m'
 Lgreen='\e[92m'
 Lyellow='\e[93m'
 NC='\e[0m'
-MYIP=$(wget -qO- ifconfig.co);
+MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
+IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+echo -e "${NC}${LIGHT}Facebook : "
+echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
+exit 0
+fi
 #EDIT IZIN
 clear 
 echo -e  "$PURPLE  .-------------------------------------------------------."
