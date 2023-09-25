@@ -27,7 +27,8 @@ echo -e   "\033[0;33m 15. •CLEAR TMP LOGS [SCRIPT]\003[0;33m"
 echo -e   "\033[1;33m 16. •CHANGE OR ADD OWN NAMESERVERS\033[1;33m"
 echo -e   "\033[0;33m 17. •CHANGE OR ADD OWN CLOUDFLARE DOMAIN\033[0;33m"
 echo -e   "\033[1;33m 18. •UPDATE KERNEL VERSION\033[1;33m"
-echo -e   "\033[0;33m 19. •Exit\033[0;33m"
+echo -e   "\033[1;33m 19. •SET UP REBOOT MODE\033[1;33m"
+echo -e   "\033[0;33m 20. •Exit\033[0;33m"
 echo -e "\033[0;36m==================================================\033[m"
 echo -e   "\E[44;1;39m           ⇱ MOD BY RichBoyBrown ⇲               \E[0m"
 echo -e   "\E[44;1;39m            ⇱ WA : 18765946096 ⇲                 \E[0m"
@@ -107,6 +108,9 @@ clear
 kernel-updt
 ;;
 19)
+auto-reboot
+;;
+20)
 clear
 exit
 ;;
