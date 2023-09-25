@@ -108,7 +108,8 @@ clear
 kernel-updt
 ;;
 19)
-ohp
+clear
+auto-reboot
 ;;
 20)
 clear
