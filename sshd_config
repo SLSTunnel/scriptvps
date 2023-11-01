@@ -21,8 +21,8 @@ ListenAddress 10.8.0.1
 ListenAddress ::22
 
 HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
-#HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Ciphers and keying
 #RekeyLimit default none
@@ -89,11 +89,11 @@ ChallengeResponseAuthentication no
 UsePAM yes
 
 AllowAgentForwarding yes
-#AllowTcpForwarding yes
+AllowTcpForwarding yes
 GatewayPorts yes
 X11Forwarding yes
 #X11DisplayOffset 10
-#X11UseLocalhost yes
+X11UseLocalhost yes
 #PermitTTY yes
 PrintMotd no
 #PrintLastLog yes
@@ -104,7 +104,7 @@ TCPKeepAlive yes
 #ClientAliveInterval 0
 #ClientAliveCountMax 3
 UseDNS yes
-#PidFile /var/run/sshd.pid
+PidFile /var/run/sshd.pid
 #MaxStartups 10:30:100
 #PermitTunnel no
 #ChrootDirectory none
@@ -131,7 +131,7 @@ Subsystem	sftp	/usr/lib/openssh/sftp-server
 ClientAliveInterval 420
 ClientAliveInterval 120
 
-#TrustedUserCAKeys /etc/ssh/lightsail_instance_ca.pub
+TrustedUserCAKeys /etc/ssh/lightsail_instance_ca.pub
 #
 Banner /etc/issue.net
 AllowTcpForwarding yes
