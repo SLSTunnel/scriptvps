@@ -89,6 +89,8 @@ setmenu
 ;;
 14)
 clear
+sudo apt install nginx
+sudo ufw allow 'Nginx HTTP'
 update
 ;;
 15)
