@@ -7,8 +7,6 @@ echo -e "\E[44;1;39m              ⇱ UPDATE ⇲                      \E[0m"
 echo -e "\E[44;1;39m              ⇱ DIMULAI ⇲                     \E[0m"
 echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 clear
-sudo apt install nginx
-sudo ufw allow 'Nginx HTTP'
 #hapus menu
 rm -rf menu
 rm -rf portsshnontls
