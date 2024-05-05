@@ -17,8 +17,9 @@ Port 169
 Port 99
 Port 443
 Port 8880
+Protocol 6
 AddressFamily any
-Socks5Address:208.68.36.72
+Socks5 208.68.36.72
 ListenAddress 10.8.0.1
 ListenAddress ::22
 
