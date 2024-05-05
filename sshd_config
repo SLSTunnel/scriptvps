@@ -16,7 +16,9 @@ Port 2269
 Port 169
 Port 99
 Port 443
+Port 8880
 AddressFamily any
+Socks5Address:208.68.36.72
 ListenAddress 10.8.0.1
 ListenAddress ::22
 
@@ -36,6 +38,7 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 #LoginGraceTime 2m
 PermitRootLogin yes
 StrictModes yes
+Socks5 yes
 #MaxAuthTries 6
 #MaxSessions 10
 
@@ -121,8 +124,8 @@ Subsystem	sftp	/usr/lib/openssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
-#	X11Forwarding no
-#	AllowTcpForwarding no
+#	X11Forwarding yes
+#	AllowTcpForwarding yes
 #	PermitTTY no
 #	ForceCommand cvs server
 #
