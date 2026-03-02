@@ -12,19 +12,6 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo -e "${GREEN}[*]${NC} Checking VPS authorization..."
-IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
-if [ "$IZIN" -gt 0 ]; then
-echo -e "${GREEN}[✓]${NC} Authorization accepted."
-else
-echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
-echo -e "${LIGHT}Please contact the administrator."
-echo -e "${LIGHT}Facebook  : "
-echo -e "${LIGHT}WhatsApp  : 8765946096"
-echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
-exit 1
-fi
 clear
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[Installed]${Font_color_suffix}"
