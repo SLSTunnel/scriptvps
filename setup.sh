@@ -21,8 +21,8 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl "https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt" | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
+IZIN=$( curl "https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt" | grep -c "$MYIP" )
+if [ "$IZIN" -gt 0 ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
 echo -e "${NC}${RED}Permission Denied!${NC}";
@@ -34,31 +34,28 @@ exit 0
 fi
 # ==========================================
 # Getting
+# Link Hosting Base URL
+BASE_URL="raw.githubusercontent.com/SLSTunnel/scriptvps/main"
 # Link Hosting Kalian Untuk Ssh Vpn
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh"
+tarapkuhing_ssh="${BASE_URL}/ssh"
 # Link Hosting Kalian Untuk Sstp
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp"
+tarapkuhing_sstp="${BASE_URL}/sstp"
 # Link Hosting Kalian Untuk Ssr
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr"
+tarapkuhing_ssr="${BASE_URL}/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks"
+tarapkuhing_ss="${BASE_URL}/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard"
+tarapkuhing_wg="${BASE_URL}/wireguard"
 # Link Hosting Kalian Untuk Xray
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray"
+tarapkuhing_xray="${BASE_URL}/xray"
 # Link Hosting Kalian Untuk Ipsec
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipsec"
+tarapkuhing_ipsec="${BASE_URL}/ipsec"
 # Link Hosting Kalian Untuk Backup
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/backup"
+tarapkuhing_backup="${BASE_URL}/backup"
 # Link Hosting Kalian Untuk Websocket
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket"
+tarapkuhing_ws="${BASE_URL}/websocket"
 # Link Hosting Kalian Untuk Ohp
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ohp"
-
-# Getting
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$(wget -qO- ipinfo.io/ip);
+tarapkuhing_ohp="${BASE_URL}/ohp"
 
 rm -f setup.sh
 clear
@@ -117,7 +114,8 @@ chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
 echo " "
-echo "Installation has been completed!!"echo " "
+echo "Installation has been completed!!"
+echo " "
 echo "============================================================================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "----------------------------------------------------------------------------" | tee -a log-install.txt
