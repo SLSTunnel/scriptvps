@@ -1,0 +1,6 @@
+# ScriptVPS Authorized IP List
+# Format: one IP address per line
+# Add authorized VPS IP addresses below
+# Example:
+# 192.168.1.1
+# 10.0.0.1
