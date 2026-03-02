@@ -114,6 +114,10 @@ chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
 
+# Install menu command so it is available after reboot
+wget -qO /usr/bin/menu "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/update/menu.sh" && chmod +x /usr/bin/menu || \
+  echo -e "${RED}[✗]${NC} Failed to download menu command. Run 'update' after reboot to install it."
+
 # Print installation summary
 {
 echo ""
