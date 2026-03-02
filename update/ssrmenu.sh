@@ -21,7 +21,7 @@ SSR_STATUS=$(status_color)
 
 clear
 echo -e   "$y==========================================================$wh"
-echo -e   "\E[44;1;39m            ⇱ SHADOSOCKSR ⇲             \E[0m"
+echo -e   "\E[44;1;39m           ⇱ SHADOWSOCKSR ⇲             \E[0m"
 echo -e   "$y==========================================================$wh"
 echo -e   " SSR Service: $SSR_STATUS"
 echo -e   "$y==========================================================$wh"

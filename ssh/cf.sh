@@ -14,14 +14,17 @@ LIGHT='\033[0;37m'
 # Getting
 clear
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl ipinfo.io/ip | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${GREEN}[*]${NC} Checking VPS authorization..."
+IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
+if [ "$IZIN" -gt 0 ]; then
+echo -e "${GREEN}[✓]${NC} Authorization accepted."
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Fuck You!!"
-exit 0
+echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
+echo -e "${LIGHT}Please contact the administrator."
+echo -e "${LIGHT}Facebook  : "
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
+exit 1
 fi
 apt install jq curl -y
 IP=$(wget -qO- icanhazip.com)
@@ -30,7 +33,7 @@ echo -e  "\033[1;31m============================================\033[0m"
 echo -e  "\033[0;33m    TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   \033[0;33m"
 echo -e  "\033[0;33m    MOD DARI SAYA BY TARAP KUHING           \033[0;33m"
 echo -e  "\033[0;33m          ADA PERTANYAAN CHAT               \033[0;33m"
-echo -e  "\033[0;33m    WA :     085754292950                   \033[0;33m"
+echo -e  "\033[0;33m    WA :     8765946096                   \033[0;33m"
 echo -e  "\033[1;31m============================================\033[0m"
 read -rp " TEKAN ENTER UNTUK MELANJUTKAN "
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)

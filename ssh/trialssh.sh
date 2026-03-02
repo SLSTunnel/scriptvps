@@ -13,17 +13,17 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${GREEN}[*]${NC} Checking VPS authorization..."
+IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
+if [ "$IZIN" -gt 0 ]; then
+echo -e "${GREEN}[✓]${NC} Authorization accepted."
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook : "
-echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
-exit 0
+echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
+echo -e "${LIGHT}Please contact the administrator."
+echo -e "${LIGHT}Facebook  : "
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
+exit 1
 fi
 source /var/lib/tarapkuhing/ipvps.conf
 if [[ "$IP2" = "" ]]; then
@@ -46,10 +46,10 @@ systemctl restart ws-nontls
 systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
 systemctl restart openvpn-ohp
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+useradd -e `date -d "$hari days" +"%Y-%m-%d"` -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 hariini=`date -d "0 days" +"%Y-%m-%d"`
-expi=`date -d "$masaaktif days" +"%Y-%m-%d"`
+expi=`date -d "$hari days" +"%Y-%m-%d"`
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 echo -e "Informasi Trial SSH & OpenVPN"

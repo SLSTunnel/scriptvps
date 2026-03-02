@@ -46,8 +46,8 @@ netfilter-persistent reload > /dev/null
 
 
 sed -i "s/$ws/$ws2/g" /etc/systemd/system/ws-nontls.service
-systemctl restart sslh
 systemctl daemon-reload
+systemctl restart sslh
 systemctl restart ws-nontls > /dev/null
 
 #ganti port info

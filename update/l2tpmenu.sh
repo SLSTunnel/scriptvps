@@ -16,7 +16,7 @@ echo -e "$yy 5$y. Exit"
 echo -e   "$y==========================================================$wh"
 echo -e   "\E[44;1;39m            ⇱ Sc By RichBoyBrown ⇲             \E[0m"
 echo -e   "$y==========================================================$wh"
-read -p "Select From Options [ 1 - 7 ] : " menu
+read -p "Select From Options [ 1 - 5 ] : " menu
 echo -e ""
 case $menu in
 1)

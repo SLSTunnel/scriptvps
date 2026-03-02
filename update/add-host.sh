@@ -4,8 +4,17 @@ GREEN='\e[0;32m'
 BLUE='\e[0;34m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.co);
-echo "Checking VPS"
-#EDIT IZIN
+echo -e "${GREEN}[*]${NC} Checking VPS authorization..."
+IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
+if [ "$IZIN" -gt 0 ]; then
+echo -e "${GREEN}[✓]${NC} Authorization accepted."
+else
+echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
+echo -e "Please contact the administrator."
+echo -e "WhatsApp  : 8765946096"
+echo -e "Telegram  : https://t.me/OfficialRichBoyBrown"
+exit 1
+fi
 clear 
 echo -e  "   .-------------------------------------------------------."
 echo -e  "   |                 ADD HOST/DOMAIN MENU                  |"

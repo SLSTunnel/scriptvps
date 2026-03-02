@@ -20,87 +20,96 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl "https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt" | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${GREEN}[*]${NC} Checking VPS authorization..."
+IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
+if [ "$IZIN" -gt 0 ]; then
+echo -e "${GREEN}[✓]${NC} Authorization accepted."
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook : "
-echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
-exit 0
+echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
+echo -e "${LIGHT}Please contact the administrator."
+echo -e "${LIGHT}Facebook  : "
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
+exit 1
 fi
 # ==========================================
 # Getting
+# Link Hosting Base URL
+BASE_URL="raw.githubusercontent.com/SLSTunnel/scriptvps/main"
 # Link Hosting Kalian Untuk Ssh Vpn
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh"
+tarapkuhing_ssh="${BASE_URL}/ssh"
 # Link Hosting Kalian Untuk Sstp
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp"
+tarapkuhing_sstp="${BASE_URL}/sstp"
 # Link Hosting Kalian Untuk Ssr
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr"
+tarapkuhing_ssr="${BASE_URL}/ssr"
 # Link Hosting Kalian Untuk Shadowsocks
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks"
+tarapkuhing_ss="${BASE_URL}/shadowsocks"
 # Link Hosting Kalian Untuk Wireguard
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard"
+tarapkuhing_wg="${BASE_URL}/wireguard"
 # Link Hosting Kalian Untuk Xray
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray"
+tarapkuhing_xray="${BASE_URL}/xray"
 # Link Hosting Kalian Untuk Ipsec
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipsec"
+tarapkuhing_ipsec="${BASE_URL}/ipsec"
 # Link Hosting Kalian Untuk Backup
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/backup"
+tarapkuhing_backup="${BASE_URL}/backup"
 # Link Hosting Kalian Untuk Websocket
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket"
+tarapkuhing_ws="${BASE_URL}/websocket"
 # Link Hosting Kalian Untuk Ohp
-tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/ohp"
-
-# Getting
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$(wget -qO- ipinfo.io/ip);
+tarapkuhing_ohp="${BASE_URL}/ohp"
 
 rm -f setup.sh
 clear
 if [ -f "/etc/xray/domain" ]; then
-echo "Script Already Installed"
+echo -e "${GREEN}[✓]${NC} Script already installed. Exiting."
 exit 0
 fi
-mkdir /var/lib/tarapkuhing;
-echo "IP=" >> /var/lib/tarapkuhing/ipvps.conf
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/cf.sh && chmod +x cf.sh && ./cf.sh
-#install v2ray
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
-#install ssh ovpn
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
-#install ssr
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
-#installwg
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
-#install L2TP
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipsec/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
-# Websocket
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket/edu.sh && chmod +x edu.sh && ./edu.sh
-# Ohp Server
-wget https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ohp/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 
-rm -f /root/ssh-vpn.sh
-rm -f /root/sstp.sh
-rm -f /root/wg.sh
-rm -f /root/ss.sh
-rm -f /root/ssr.sh
-rm -f /root/ins-xray.sh
-rm -f /root/ipsec.sh
-rm -f /root/set-br.sh
-rm -f /root/edu.sh
-rm -f /root/ohp.sh
+# Create config directory
+mkdir -p /var/lib/tarapkuhing
+echo "IP=" > /var/lib/tarapkuhing/ipvps.conf
+
+echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[44;1;39m        ⇱ ScriptVPS - Full Installation ⇲        \E[0m"
+echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+
+# Helper: download and run a script
+install_component() {
+  local name="$1" url="$2" tmpfile="$3" screen_name="$4"
+  echo -e "${CYAN}[➜]${NC} Installing ${name}..."
+  wget -qO "/root/${tmpfile}" "${url}" && chmod +x "/root/${tmpfile}" || {
+    echo -e "${RED}[✗]${NC} Failed to download ${name}. Skipping."
+    return 1
+  }
+  if [ -n "${screen_name}" ]; then
+    screen -dmS "${screen_name}" bash "/root/${tmpfile}"
+  else
+    bash "/root/${tmpfile}"
+  fi
+}
+
+install_component "Cloudflare DNS"   "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/cf.sh"              "cf.sh"           ""
+install_component "XRAY/V2Ray"       "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/xray/ins-xray.sh"       "ins-xray.sh"     "xray"
+install_component "SSH & OpenVPN"    "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/ssh-vpn.sh"          "ssh-vpn.sh"      "ssh-vpn"
+install_component "SSTP"             "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/sstp/sstp.sh"            "sstp.sh"         "sstp"
+install_component "ShadowsocksR"     "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssr/ssr.sh"              "ssr.sh"          "ssr"
+install_component "Shadowsocks"      "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/shadowsocks/sodosok.sh"  "sodosok.sh"      "ss"
+install_component "WireGuard"        "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/wireguard/wg.sh"         "wg.sh"           "wg"
+install_component "L2TP/IPSec"       "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipsec/ipsec.sh"          "ipsec.sh"        "ipsec"
+install_component "Backup/Rclone"    "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/backup/set-br.sh"        "set-br.sh"       ""
+install_component "WebSocket"        "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket/edu.sh"        "edu.sh"          ""
+install_component "OHP Server"       "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ohp/ohp.sh"              "ohp.sh"          ""
+
+# Clean up installer scripts
+echo -e "${CYAN}[➜]${NC} Cleaning up installer scripts..."
+rm -f /root/ssh-vpn.sh /root/sstp.sh /root/wg.sh /root/ss.sh /root/ssr.sh /root/cf.sh /root/sodosok.sh
+rm -f /root/ins-xray.sh /root/ipsec.sh /root/set-br.sh /root/edu.sh /root/ohp.sh
+# Setup auto-start service
+echo -e "${CYAN}[➜]${NC} Configuring auto-start service..."
 cat <<EOF> /etc/systemd/system/autosett.service
 [Unit]
-Description=autosetting
-Documentation=https://t.me/Hendra2012
+Description=ScriptVPS Auto Setting
+Documentation=https://github.com/SLSTunnel/scriptvps
+After=network.target
 
 [Service]
 Type=oneshot
@@ -112,62 +121,68 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/set.sh"
+wget -qO /etc/set.sh "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ssh/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
-echo " "
-echo "Installation has been completed!!"echo " "
-echo "============================================================================" | tee -a log-install.txt
-echo "" | tee -a log-install.txt
-echo "----------------------------------------------------------------------------" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   >>> Service & Port"  | tee -a log-install.txt
-echo "   - OpenSSH                 : 443, 22"  | tee -a log-install.txt
-echo "   - OpenVPN                 : TCP 1194, UDP 2200, SSL 990"  | tee -a log-install.txt
-echo "   - Stunnel5                : 443, 445, 777"  | tee -a log-install.txt
-echo "   - Dropbear                : 109, 143"  | tee -a log-install.txt
-echo "   - Squid Proxy             : 3128, 8080"  | tee -a log-install.txt
-echo "   - Badvpn                  : 7100, 7200, 7300"  | tee -a log-install.txt
-echo "   - Nginx                   : 81"  | tee -a log-install.txt
-echo "   - Wireguard               : 7070"  | tee -a log-install.txt
-echo "   - L2TP/IPSEC VPN          : 1701"  | tee -a log-install.txt
-echo "   - PPTP VPN                : 1732"  | tee -a log-install.txt
-echo "   - SSTP VPN                : 444"  | tee -a log-install.txt
-echo "   - Shadowsocks-R           : 1443-1543"  | tee -a log-install.txt
-echo "   - SS-OBFS TLS             : 2443-2543"  | tee -a log-install.txt
-echo "   - SS-OBFS HTTP            : 3443-3543"  | tee -a log-install.txt
-echo "   - XRAYS Vmess TLS         : 8443"  | tee -a log-install.txt
-echo "   - XRAYS Vmess None TLS    : 80"  | tee -a log-install.txt
-echo "   - XRAYS Vless TLS         : 8443"  | tee -a log-install.txt
-echo "   - XRAYS Vless None TLS    : 80"  | tee -a log-install.txt
-echo "   - XRAYS Trojan            : 2083"  | tee -a log-install.txt
-echo "   - Websocket TLS           : 443"  | tee -a log-install.txt
-echo "   - Websocket None TLS      : 8880"  | tee -a log-install.txt
-echo "   - Websocket Ovpn          : 2086"  | tee -a log-install.txt
-echo "   - OHP SSH                 : 8181"  | tee -a log-install.txt
-echo "   - OHP Dropbear            : 8282"  | tee -a log-install.txt
-echo "   - OHP OpenVPN             : 8383"  | tee -a log-install.txt
-echo "   - Tr Go                   : 2087"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
-echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
-echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
-echo "   - IPtables                : [ON]"  | tee -a log-install.txt
-echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
-echo "   - IPv6                    : [ON]"  | tee -a log-install.txt
-echo "   - Autoreboot On 05.00 GMT +7" | tee -a log-install.txt
-echo "   - Autobackup Data" | tee -a log-install.txt
-echo "   - Restore Data" | tee -a log-install.txt
-echo "   - Auto Delete Expired Account" | tee -a log-install.txt
-echo "   - Full Orders For Various Services" | tee -a log-install.txt
-echo "   - White Label" | tee -a log-install.txt
-echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
+
+# Print installation summary
+{
 echo ""
-echo "   - Installation Script vps Mod By RichBoyBrown......SELESAI......!!!!!!"
+echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[44;1;39m         ⇱ Installation Summary ⇲               \E[0m"
+echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo " Reboot 15 Sec"
+echo "   >>> Service & Port"
+echo "   ─────────────────────────────────────────────"
+echo "   - OpenSSH                 : 443, 22"
+echo "   - OpenVPN                 : TCP 1194, UDP 2200, SSL 990"
+echo "   - Stunnel5                : 443, 445, 777"
+echo "   - Dropbear                : 109, 143"
+echo "   - Squid Proxy             : 3128, 8080"
+echo "   - Badvpn                  : 7100, 7200, 7300"
+echo "   - Nginx                   : 81"
+echo "   - Wireguard               : 7070"
+echo "   - L2TP/IPSEC VPN          : 1701"
+echo "   - PPTP VPN                : 1732"
+echo "   - SSTP VPN                : 444"
+echo "   - Shadowsocks-R           : 1443-1543"
+echo "   - SS-OBFS TLS             : 2443-2543"
+echo "   - SS-OBFS HTTP            : 3443-3543"
+echo "   - XRAYS Vmess TLS         : 8443"
+echo "   - XRAYS Vmess None TLS    : 80"
+echo "   - XRAYS Vless TLS         : 8443"
+echo "   - XRAYS Vless None TLS    : 80"
+echo "   - XRAYS Trojan            : 2083"
+echo "   - Websocket TLS           : 443"
+echo "   - Websocket None TLS      : 8880"
+echo "   - Websocket Ovpn          : 2086"
+echo "   - OHP SSH                 : 8181"
+echo "   - OHP Dropbear            : 8282"
+echo "   - OHP OpenVPN             : 8383"
+echo "   - Trojan Go               : 2087"
+echo ""
+echo "   >>> Server Features"
+echo "   ─────────────────────────────────────────────"
+echo "   - Timezone                : Asia/Jakarta (GMT +7)"
+echo "   - Fail2Ban                : [ON]"
+echo "   - Deflate                 : [ON]"
+echo "   - IPtables                : [ON]"
+echo "   - Auto-Reboot             : [ON]"
+echo "   - IPv6                    : [ON]"
+echo "   - Auto-Reboot             : Daily at 05:00 GMT+7"
+echo "   - Autobackup Data         : [ENABLED]"
+echo "   - Restore Data            : [ENABLED]"
+echo "   - Auto Delete Expired     : [ENABLED]"
+echo "   - Installation Log        : /root/log-install.txt"
+echo ""
+echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "${GREEN}[✓] Installation completed successfully!${NC}"
+echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+} | tee -a log-install.txt
+echo ""
+echo -e "${CYAN}[➜]${NC} System will reboot in 15 seconds..."
 sleep 15
 rm -f setup.sh
 reboot

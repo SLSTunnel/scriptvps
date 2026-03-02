@@ -14,17 +14,17 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/SLSTunnel/perizinan/main/ipvps.txt | grep $MYIP )
-if [ $MYIP = $MYIP ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${GREEN}[*]${NC} Checking VPS authorization..."
+IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
+if [ "$IZIN" -gt 0 ]; then
+echo -e "${GREEN}[✓]${NC} Authorization accepted."
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-echo -e "${NC}${LIGHT}Facebook : "
-echo -e "${NC}${LIGHT}WhatsApp : 085754292950"
-echo -e "${NC}${LIGHT}Telegram : https://t.me/Hendra2012"
-exit 0
+echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
+echo -e "${LIGHT}Please contact the administrator."
+echo -e "${LIGHT}Facebook  : "
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
+exit 1
 fi
 # Link Hosting Kalian
 tarapkuhing="raw.githubusercontent.com/SLSTunnel/scriptvps/main/websocket"
@@ -37,7 +37,7 @@ chmod +x /usr/local/bin/ws-nontls
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
@@ -65,7 +65,7 @@ chmod +x /usr/local/bin/ws-ovpn
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
@@ -93,7 +93,7 @@ chmod +x /usr/local/bin/ws-tls
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]

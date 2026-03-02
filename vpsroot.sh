@@ -21,10 +21,6 @@ Akun Root (Akun Utama)
 Ip address = $(curl -Ls http://ipinfo.io/ip)
 Username   = root
 Password   = $pwe
-============================================
-User Akun Baru Dengan Akses Root (Akun Baru)
-Username   = $crot
-Password   = $Pass
 ============================================";
 echo "";
 exit;
