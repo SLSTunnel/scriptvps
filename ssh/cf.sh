@@ -17,12 +17,13 @@ apt install jq curl -y
 IP=$(wget -qO- icanhazip.com)
 DOMAIN=tarong.my.id
 echo -e  "\033[1;31m============================================\033[0m"
-echo -e  "\033[0;33m    TERIMA KASIH SUDAH MENGGUNAKAN SCRIPT   \033[0;33m"
-echo -e  "\033[0;33m    MOD DARI SAYA BY TARAP KUHING           \033[0;33m"
-echo -e  "\033[0;33m          ADA PERTANYAAN CHAT               \033[0;33m"
-echo -e  "\033[0;33m    WA :     8765946096                   \033[0;33m"
+echo -e  "\033[0;33m    Thank you for using my script           \033[0;33m"
+echo -e  "\033[0;33m    made by me, DevSuppport                 \033[0;33m"
+echo -e  "\033[0;33m                                            \033[0;33m"
+echo -e  "\033[0;33m    If you have any questions, chat via:    \033[0;33m"
+echo -e  "\033[0;33m    WhatsApp: 8765946096                    \033[0;33m"
 echo -e  "\033[1;31m============================================\033[0m"
-read -rp " TEKAN ENTER UNTUK MELANJUTKAN "
+read -rp " Press ENTER to continue "
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 SUB_DOMAIN=${sub}.tarong.my.id
 CF_ID=merahjambo@gmail.com
