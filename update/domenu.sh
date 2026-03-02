@@ -13,17 +13,6 @@ Lgreen='\e[92m'
 Lyellow='\e[93m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.co);
-echo -e "${green}[*]${NC} Checking VPS authorization..."
-IZIN=$(curl -sf --max-time 10 "https://raw.githubusercontent.com/SLSTunnel/scriptvps/main/ipvps.txt" | grep -c "$MYIP")
-if [ "$IZIN" -gt 0 ]; then
-echo -e "${green}[✓]${NC} Authorization accepted."
-else
-echo -e "${red}[✗]${NC} Authorization denied for IP: ${MYIP}"
-echo -e "Please contact the administrator."
-echo -e "WhatsApp  : 8765946096"
-echo -e "Telegram  : https://t.me/OfficialRichBoyBrown"
-exit 1
-fi
 clear 
 echo -e  "$PURPLE  .-------------------------------------------------------."
 echo -e  "$PURPLE  |                      $Blink $yell  Cloudflare Menu$NC                   $PURPLE|"
