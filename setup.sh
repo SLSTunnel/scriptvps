@@ -101,7 +101,7 @@ install_component "OHP Server"       "https://raw.githubusercontent.com/SLSTunne
 
 # Clean up installer scripts
 echo -e "${CYAN}[➜]${NC} Cleaning up installer scripts..."
-rm -f /root/ssh-vpn.sh /root/sstp.sh /root/wg.sh /root/ss.sh /root/ssr.sh
+rm -f /root/ssh-vpn.sh /root/sstp.sh /root/wg.sh /root/ss.sh /root/ssr.sh /root/cf.sh /root/sodosok.sh
 rm -f /root/ins-xray.sh /root/ipsec.sh /root/set-br.sh /root/edu.sh /root/ohp.sh
 # Setup auto-start service
 echo -e "${CYAN}[➜]${NC} Configuring auto-start service..."

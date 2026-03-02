@@ -3,7 +3,10 @@ import socket, threading, select, signal, sys, time, getopt
 
 # Listen
 LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = sys.argv[1]
+if len(sys.argv) < 2:
+    print('Usage: websocket.py <port>')
+    sys.exit(1)
+LISTENING_PORT = int(sys.argv[1])
 
 # Pass
 PASS = ''
@@ -180,6 +183,7 @@ class ConnectionHandler(threading.Thread):
         self.target.connect(address)
 
     def method_CONNECT(self, path):
+        self.method = 'CONNECT'
         self.log += ' - CONNECT ' + path
 
         self.connect_target(path)
