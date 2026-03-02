@@ -57,6 +57,9 @@ echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[44;1;39m        ⇱ ScriptVPS - Full Installation ⇲        \E[0m"
 echo -e "\033[0;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
+# Ensure screen is available for background installs
+apt-get install -y screen > /dev/null 2>&1
+
 # Helper: download and run a script
 install_component() {
   local name="$1" url="$2" tmpfile="$3" screen_name="$4"
