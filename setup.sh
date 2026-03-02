@@ -28,8 +28,8 @@ else
 echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
 echo -e "${LIGHT}Please contact the administrator."
 echo -e "${LIGHT}Facebook  : "
-echo -e "${LIGHT}WhatsApp  : 085754292950"
-echo -e "${LIGHT}Telegram  : https://t.me/Hendra2012"
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
 exit 1
 fi
 # ==========================================

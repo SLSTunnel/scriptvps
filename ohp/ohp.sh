@@ -22,8 +22,8 @@ else
 echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
 echo -e "${LIGHT}Please contact the administrator."
 echo -e "${LIGHT}Facebook  : "
-echo -e "${LIGHT}WhatsApp  : 085754292950"
-echo -e "${LIGHT}Telegram  : https://t.me/Hendra2012"
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
 exit 1
 fi
 
@@ -36,7 +36,7 @@ chmod +x /usr/local/bin/ohp
 cat > /etc/systemd/system/ssh-ohp.service << END
 [Unit]
 Description=SSH OHP Redirection Service
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
@@ -57,7 +57,7 @@ END
 cat > /etc/systemd/system/dropbear-ohp.service << END
 [Unit]]
 Description=Dropbear OHP Redirection Service
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
@@ -78,7 +78,7 @@ END
 cat > /etc/systemd/system/openvpn-ohp.service << END
 [Unit]]
 Description=OpenVPN OHP Redirection Service
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]

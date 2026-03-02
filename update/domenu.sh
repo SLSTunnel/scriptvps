@@ -20,8 +20,8 @@ echo -e "${green}[✓]${NC} Authorization accepted."
 else
 echo -e "${red}[✗]${NC} Authorization denied for IP: ${MYIP}"
 echo -e "Please contact the administrator."
-echo -e "WhatsApp  : 085754292950"
-echo -e "Telegram  : https://t.me/Hendra2012"
+echo -e "WhatsApp  : 8765946096"
+echo -e "Telegram  : https://t.me/OfficialRichBoyBrown"
 exit 1
 fi
 clear 

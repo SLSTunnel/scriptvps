@@ -22,8 +22,8 @@ else
 echo -e "${RED}[✗]${NC} Authorization denied for IP: ${MYIP}"
 echo -e "${LIGHT}Please contact the administrator."
 echo -e "${LIGHT}Facebook  : "
-echo -e "${LIGHT}WhatsApp  : 085754292950"
-echo -e "${LIGHT}Telegram  : https://t.me/Hendra2012"
+echo -e "${LIGHT}WhatsApp  : 8765946096"
+echo -e "${LIGHT}Telegram  : https://t.me/OfficialRichBoyBrown"
 exit 1
 fi
 # Link Hosting Kalian
@@ -37,7 +37,7 @@ chmod +x /usr/local/bin/ws-nontls
 cat > /etc/systemd/system/ws-nontls.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
@@ -65,7 +65,7 @@ chmod +x /usr/local/bin/ws-ovpn
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
@@ -93,7 +93,7 @@ chmod +x /usr/local/bin/ws-tls
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
 Description=Python Proxy Mod By TARAP KUHING
-Documentation=https://t.me/Hendra2012
+Documentation=https://t.me/OfficialRichBoyBrown
 After=network.target nss-lookup.target
 
 [Service]
